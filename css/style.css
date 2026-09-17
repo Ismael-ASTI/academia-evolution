@@ -67,13 +67,13 @@ a{color:inherit;text-decoration:none}
   font-size:0.95rem;
   border-radius:2px;
   border:1px solid transparent;
-  transition:transform .12s ease, background .15s ease, border-color .15s ease;
+  transition:transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .btn--small{padding:9px 18px;font-size:0.85rem}
 .btn--primary{background:var(--orange);color:#0a0a0a}
-.btn--primary:hover{background:var(--orange-deep);color:#fff}
+.btn--primary:hover{background:var(--orange-deep);color:#fff;transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,90,31,.2)}
 .btn--outline{border-color:var(--line);color:var(--bone)}
-.btn--outline:hover{border-color:var(--orange)}
+.btn--outline:hover{border-color:var(--orange);transform:translateY(-2px)}
 .btn--ghost{color:var(--bone)}
 .btn--ghost:hover{color:var(--orange)}
 
@@ -92,6 +92,7 @@ a{color:inherit;text-decoration:none}
   align-items:center;
 }
 .hero__text h1{font-size:clamp(2.6rem,5.6vw,4.6rem);color:var(--bone)}
+.hero__text{animation:rise-in .8s cubic-bezier(.22,1,.36,1) both}
 .hero__lede{max-width:44ch;color:var(--grey);font-size:1.08rem;margin-top:22px}
 .hero__actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
 .hero__meta{
@@ -116,6 +117,8 @@ a{color:inherit;text-decoration:none}
 }
 .hero__panel-row:last-child{border-bottom:none}
 .hero__panel-row--dim{color:var(--grey)}
+.hero__panel-row{transition:color .2s ease, padding-left .2s ease}
+.hero__panel-row:hover{color:var(--orange);padding-left:28px}
 
 /* Sobre */
 .sobre{padding:80px 0;border-bottom:1px solid var(--line)}
@@ -127,7 +130,8 @@ a{color:inherit;text-decoration:none}
 .modalidades{padding:80px 0;border-bottom:1px solid var(--line)}
 .modalidades h2{font-size:2rem;margin-bottom:36px;color:var(--bone)}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:var(--ink);padding:30px 24px}
+.card{background:var(--ink);padding:30px 24px;transition:transform .25s ease,background .25s ease}
+.card:hover{background:#0d0b09;transform:translateY(-6px);position:relative;z-index:1}
 .card__mark{display:block;width:34px;height:3px;background:var(--orange);margin-bottom:18px}
 .card h3{font-size:1.05rem;color:var(--bone);margin-bottom:10px}
 .card p{color:var(--grey);font-size:0.92rem}
@@ -137,7 +141,8 @@ a{color:inherit;text-decoration:none}
 .planos h2{font-size:2rem;color:var(--bone)}
 .planos__lede{color:var(--grey);margin:14px 0 40px}
 .planos__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:40px}
-.plano{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column}
+.plano{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column;transition:transform .25s ease,background .25s ease}
+.plano:hover{background:#27221c;transform:translateY(-5px);position:relative;z-index:1}
 .plano--destaque{background:#221a12;border-top:2px solid var(--orange)}
 .plano__top{margin-bottom:20px}
 .plano h3{font-size:1.1rem;color:var(--bone);margin-bottom:8px}
@@ -171,6 +176,18 @@ a{color:inherit;text-decoration:none}
 .footer{padding:28px 0;border-top:1px solid var(--line)}
 .footer__inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:0.82rem;color:var(--grey)}
 
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.is-visible,.reveal--visible{opacity:1;transform:translateY(0)}
+.reveal--delay{transition-delay:.14s}
+.reveal--delay-1{transition-delay:.08s}
+.reveal--delay-2{transition-delay:.16s}
+.reveal--delay-3{transition-delay:.24s}
+
+@keyframes rise-in{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
 @media (max-width:860px){
   .hero__grid{grid-template-columns:1fr}
   .nav{display:none}
@@ -201,5 +218,6 @@ a{color:inherit;text-decoration:none}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .btn{transition:none}
+  .btn,.card,.plano,.hero__panel-row,.reveal,.hero__text{animation:none;transition:none}
+  .reveal{opacity:1;transform:none}
 }
