@@ -1,6 +1,6 @@
 # + Evolution Academia
 
-Site institucional da + Evolution Academia, em Marechal Cândido Rondon - PR.
+Site institucional da + Evolution Academia.
 
 ## Rodar localmente
 
