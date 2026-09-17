@@ -184,6 +184,18 @@ a{color:inherit;text-decoration:none}
 .confianca__items p{padding:17px 0;border-bottom:1px solid var(--line);color:var(--grey)}
 .confianca__items strong{display:inline-block;color:var(--orange);font-family:'Anton',sans-serif;font-size:1.25rem;width:30px}
 
+/* Catalogo visual */
+.catalogo{padding:80px 0;border-bottom:1px solid var(--line);background:#090807}
+.catalogo__heading{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:36px}
+.catalogo h2{font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--bone)}
+.catalogo__heading p{max-width:36ch;color:var(--grey);font-size:.95rem}
+.catalogo__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.catalogo__item{display:block;background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.catalogo__item:hover{transform:translateY(-6px);border-color:var(--orange);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.catalogo__item img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;background:#050505}
+.catalogo__item span{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;color:var(--bone);font-size:.88rem}
+.catalogo__item strong{color:var(--orange);font-weight:600;white-space:nowrap}
+
 /* Horarios / Local */
 .horarios{padding:80px 0;border-bottom:1px solid var(--line)}
 .horarios__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -235,10 +247,15 @@ a{color:inherit;text-decoration:none}
   .hero__meta div{min-width:calc(50% - 10px)}
   .hero__meta div:last-child{min-width:100%}
   .sobre,.modalidades,.planos,.horarios{padding:60px 0}
-  .prova,.aulas,.confianca{padding:56px 0}
+  .prova,.aulas,.confianca,.catalogo{padding:56px 0}
   .prova__stats{grid-template-columns:1fr 1fr}
   .prova__stats div:last-child{grid-column:1/-1}
   .hero__actions .btn{width:100%;text-align:center}
+  .catalogo__heading{display:block}
+  .catalogo__heading p{margin-top:14px}
+  .catalogo__grid{grid-template-columns:1fr 1fr;gap:10px}
+  .catalogo__item span{display:block;padding:11px 12px;font-size:.8rem}
+  .catalogo__item strong{display:block;margin-top:3px}
   .horarios dl div{display:block}
   .horarios dd{text-align:left;margin-top:4px}
   .footer__inner{display:block}
