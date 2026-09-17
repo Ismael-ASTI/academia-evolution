@@ -120,6 +120,17 @@ a{color:inherit;text-decoration:none}
 .hero__panel-row{transition:color .2s ease, padding-left .2s ease}
 .hero__panel-row:hover{color:var(--orange);padding-left:28px}
 
+.eyebrow{display:block;color:var(--orange);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+
+/* Prova social */
+.prova{padding:34px 0;border-bottom:1px solid var(--line);background:var(--charcoal)}
+.prova__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center}
+.prova h2,.aulas h2,.confianca h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--bone);max-width:13ch}
+.prova__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.prova__stats div{background:var(--ink);padding:20px}
+.prova__stats strong{display:block;color:var(--orange);font-family:'Anton',sans-serif;font-size:1.65rem;line-height:1}
+.prova__stats span{display:block;color:var(--grey);font-size:.78rem;margin-top:8px}
+
 /* Sobre */
 .sobre{padding:80px 0;border-bottom:1px solid var(--line)}
 .sobre__grid{max-width:760px}
@@ -135,6 +146,14 @@ a{color:inherit;text-decoration:none}
 .card__mark{display:block;width:34px;height:3px;background:var(--orange);margin-bottom:18px}
 .card h3{font-size:1.05rem;color:var(--bone);margin-bottom:10px}
 .card p{color:var(--grey);font-size:0.92rem}
+
+/* Aulas coletivas */
+.aulas{padding:80px 0;border-bottom:1px solid var(--line);background:linear-gradient(110deg,#0b0907,var(--ink))}
+.aulas__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.aulas p{max-width:42ch;color:var(--grey);margin-top:18px;font-size:1.02rem}
+.aulas__list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.aulas__list span{padding:24px 20px;background:var(--panel);font-family:'Anton',sans-serif;color:var(--bone);letter-spacing:.06em;transition:color .2s ease,background .2s ease}
+.aulas__list span:hover{background:#292018;color:var(--orange)}
 
 /* Planos */
 .planos{padding:80px 0;border-bottom:1px solid var(--line)}
@@ -157,6 +176,13 @@ a{color:inherit;text-decoration:none}
 .parcelas__label{font-size:0.85rem;color:var(--grey)}
 .parcelas__value{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--bone)}
 .parcelas__cond{font-size:0.8rem;color:var(--grey)}
+
+/* Conversao */
+.confianca{padding:76px 0;border-bottom:1px solid var(--line)}
+.confianca__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.confianca__items{border-top:1px solid var(--line)}
+.confianca__items p{padding:17px 0;border-bottom:1px solid var(--line);color:var(--grey)}
+.confianca__items strong{display:inline-block;color:var(--orange);font-family:'Anton',sans-serif;font-size:1.25rem;width:30px}
 
 /* Horarios / Local */
 .horarios{padding:80px 0;border-bottom:1px solid var(--line)}
@@ -197,6 +223,7 @@ a{color:inherit;text-decoration:none}
   .hero__meta{flex-wrap:wrap;row-gap:18px}
   .horarios dl div{gap:20px;align-items:flex-start}
   .horarios dd{text-align:right}
+  .prova__grid,.aulas__grid,.confianca__grid{grid-template-columns:1fr;gap:34px}
 }
 
 @media (max-width:520px){
@@ -208,6 +235,9 @@ a{color:inherit;text-decoration:none}
   .hero__meta div{min-width:calc(50% - 10px)}
   .hero__meta div:last-child{min-width:100%}
   .sobre,.modalidades,.planos,.horarios{padding:60px 0}
+  .prova,.aulas,.confianca{padding:56px 0}
+  .prova__stats{grid-template-columns:1fr 1fr}
+  .prova__stats div:last-child{grid-column:1/-1}
   .hero__actions .btn{width:100%;text-align:center}
   .horarios dl div{display:block}
   .horarios dd{text-align:left;margin-top:4px}
