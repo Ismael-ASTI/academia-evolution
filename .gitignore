@@ -1,0 +1,12 @@
+# Dependencias e caches
+node_modules/
+.npm/
+
+# Arquivos do sistema e do editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Saidas de build
+dist/
+build/
